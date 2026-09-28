@@ -1,0 +1,27 @@
+{
+  "name": "zh-pos-hmm",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "中文词性标注与一阶 HMM 序列模型评测后端（仅本地，无外部服务）",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "bin": {
+    "zh-pos": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node --no-warnings=ExperimentalWarning --experimental-strip-types src/main.ts serve",
+    "serve": "tsx src/main.ts serve",
+    "demo": "tsx scripts/demo.ts",
+    "cli": "tsx src/main.ts",
+    "test": "node --no-warnings=ExperimentalWarning --import tsx --test tests/**/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
